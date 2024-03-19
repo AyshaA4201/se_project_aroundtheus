@@ -2,25 +2,30 @@
   background-color: black;
   color: white;
 }
+
 .page__section {
   max-width: 880px;
   width: 100%;
   position: relative;
   margin: 0 auto;
 }
+
 .page__content {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
+
 .header {
   margin-top: 45px;
 }
+
 .profile {
   display: flex;
   align-items: center;
   padding-top: 40px;
 }
+
 .profile__info {
   display: grid;
   grid-template-areas:
@@ -28,32 +33,52 @@
     "description description";
   grid-template-columns: minmax (auto, 373px) auto;
 }
+
 .profile__edit-button {
-  background: transparent url(../images/edit-icon.svg) center no-repeat;
+  background: transparent url(./images/edit__button.svg) center no-repeat;
   height: 24px;
   width: 24px;
   grid-area: button;
 }
+
+.profile__edit-button:hover {
+  opacity: 60%;
+}
+
 .profile__add-button {
-  background: transparent url(../images/add-icon.svg) center no-repeat;
+  background: transparent url(./images/add__button.svg) center no-repeat;
   width: 150px;
   height: 50px;
   margin-left: auto;
 }
+
+.profile__add-button:hover {
+  opacity: 60%;
+}
+
 .profile__title {
   font-size: 42px;
   line-height: 48px;
   font-weight: 500;
   grid-area: title;
   margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
+
 .profile__description {
   font-size: 18px;
   line-height: 22px;
   font-weight: 400;
   grid-area: description;
   margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 500px;
+  overflow: hidden;
 }
+
 .profile__image {
   height: 120px;
   width: 120px;
@@ -63,7 +88,7 @@
   margin-right: 24px;
 }
 
-.profile_image {
+.profile__image {
   height: 120px;
   width: 120px;
   border-radius: 50%;
@@ -76,7 +101,7 @@
   margin-top: 30px;
 }
 
-.card_list {
+.cards__list {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat (auto-fit, 282px);
@@ -90,14 +115,15 @@
   flex-direction: column;
   list-style: none;
   border-radius: 10px;
+  overflow: hidden;
 }
 
-.card_image {
+.card__image {
   width: 282px;
   height: 282px;
 }
 
-.card_description {
+.card__description {
   display: flex;
   background-color: white;
   color: black;
@@ -107,11 +133,24 @@
   padding-right: 20px;
   align-items: center;
   justify-content: space-between;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
-.card like-button {
-  background: transparent url(../images/like-inactive.svg) center no-repeat;
+
+.card__like-button {
+  background: transparent url(./images/vector__heart.svg) center no-repeat;
   width: 21px;
   height: 18px;
+  border: none;
+}
+
+.card__like-button:hover {
+  opacity: 60%;
+}
+
+.footer {
+  color: #545454;
 }
 
 @media screen and (max-width: 480px) {
