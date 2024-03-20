@@ -1,5 +1,22 @@
 .header {
   margin-top: 45px;
   padding-bottom: 40px;
-  border-bottom: solid 1px #545454;
+  border-bottom: solid 1px rgb(84 84 84 / 0.7);
+}
+
+.header__logo {
+  width: 173px;
+  height: 33px;
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    display: flex;
+    padding-left: 27px;
+    width: 100%;
+  }
+  .header__logo {
+    width: 126px;
+    height: 24px;
+  }
 }
