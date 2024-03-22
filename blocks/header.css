@@ -9,7 +9,7 @@
   height: 33px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 620px) {
   .header {
     display: flex;
     padding-left: 27px;
