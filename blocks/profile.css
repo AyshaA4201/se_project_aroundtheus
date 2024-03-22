@@ -9,15 +9,18 @@
   grid-template-areas:
     "title button"
     "description description";
-  grid-template-columns: minmax(auto, 373px) auto;
+  grid-template-columns: minmax(auto, 375px) auto;
 }
 
 .profile__edit-button {
   background: transparent url(../images/Vector__edit-button.svg) center
     no-repeat;
+  display: flex;
   height: 24px;
   width: 24px;
   grid-area: button;
+  align-items: center;
+  justify-content: center;
   border: 1px solid #ffffff;
 }
 
@@ -79,7 +82,7 @@
     flex-direction: column;
   }
 
-  .profile_info {
+  .profile__info {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -91,7 +94,7 @@
     text-align: center;
   }
 
-  .profile_description {
+  .profile__description {
     width: 100%;
     text-align: center;
     font-size: 14px;
@@ -103,8 +106,14 @@
   }
 }
 
-/* @media screen and (max-width: 879px) {
-  .profile__add-button {
-    margin-left: 20px;
+@media screen and (max-width: 879px) {
+  .profile__edit-button {
+    display: flex;
+    flex-wrap: wrap;
   }
-} */
+
+  .profile__add-button {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
