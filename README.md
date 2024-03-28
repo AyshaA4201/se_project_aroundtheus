@@ -3,6 +3,7 @@
 ### Overview
 
 - Intro
+- Project Link
 - Figma
 - Video
 
@@ -12,7 +13,11 @@ This is a website that allows a user to share photos of their experience around 
 
 I plan to improve the media queries and pixels to be more like the ones in Figma.
 
-**Figma**
+**Project Link**
+
+- [Link to the project](https://github.com/AyshaA4201/se_project_aroundtheus.git)
+
+  **Figma**
 
 - [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)
 

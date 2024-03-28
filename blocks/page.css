@@ -1,6 +1,8 @@
 .page {
   background-color: black;
   color: white;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .page__section {
@@ -17,7 +19,7 @@
   padding: 0 20px;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 760px) {
   .page__content {
     padding: 0;
   }
