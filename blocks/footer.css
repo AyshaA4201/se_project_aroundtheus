@@ -10,7 +10,19 @@
   font-size: 18px;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 920px) {
+  .footer {
+    max-width: 581px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .footer {
+    max-width: 282px;
+    margin-top: 48px;
+    margin-bottom: 36px;
+  }
+
   .footer__text {
     font-size: 14px;
   }
