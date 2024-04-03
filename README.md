@@ -15,7 +15,7 @@ I plan to improve the media queries and pixels to be more like the ones in Figma
 
 **Project Link**
 
-- [Link to the project](https://github.com/AyshaA4201/se_project_aroundtheus.git)
+- [Link to the project](https://ayshaa4201.github.io/se_project_aroundtheus/)
 
   **Figma**
 
@@ -23,4 +23,5 @@ I plan to improve the media queries and pixels to be more like the ones in Figma
 
 **Video**
 
-Note: I have not included the video since I want to make sure the website works properly first before recording.
+- [Link to the video on Google Drive](https://drive.google.com/file/d/177AJNXU-1b_l2HXrv2gjr9u9C6XxWBX0/view?usp=sharing)
+  Excuse the volume changing in the video! I will try to fix it soon.
