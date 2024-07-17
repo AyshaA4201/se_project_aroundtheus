@@ -5,15 +5,19 @@
   right: 0;
   bottom: 0;
   z-index: 999;
-  /* display: none; */
-  display: flex;
+  display: none;
+  /* display: flex; */
   background-color: rgba(0, 0, 0, 0.5);
   padding: 0 19px;
 }
 
-/* .modal_opened {
+.modal_opened {
   display: flex;
-} */
+}
+
+.modal_closed {
+  display: none;
+}
 
 .modal__container {
   position: relative;
@@ -99,6 +103,7 @@
     width: 26px;
   }
 }
+
 @media screen and (max-width: 580px) {
   .modal__heading {
     font-size: 18px;
