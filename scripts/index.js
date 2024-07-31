@@ -49,8 +49,9 @@ function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageElement = cardElement.querySelector(".card__image");
   const cardTitleElement = cardElement.querySelector(".card__title");
-  cardImageElement.content = cardData.link;
-  //cardAltElement.textContent = cardData.name;
+  cardImageElement.linkContent = cardData.link;
+  cardImageElement.src = cardData.link;
+  cardImageElement.alt = cardData.name;
   cardTitleElement.textContent = cardData.name;
   return cardElement;
 }
