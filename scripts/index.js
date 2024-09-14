@@ -60,11 +60,11 @@ const cardUrlInput = addCardFormElement.querySelector(
 );
 
 function closeModal(modal) {
-  modal.classList.remove("modal_is-opened");
+  modal.classList.remove("modal_opened");
 }
 
 function openModal(modal) {
-  modal.classList.add("modal_is-opened");
+  modal.classList.add("modal_opened");
 }
 
 function renderCard(cardData, wrapper) {
@@ -92,10 +92,12 @@ function getCardElement(data) {
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
+  const deleteButton = cardElement.querySelector(".card__delete-button");
 
-  // find delete button
-  // add the event listener to the delete button
-  // cardElement.remove();
+  deleteButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
+
   // add click listener to the cardImage element
   // openModal with previewImageModal
 
