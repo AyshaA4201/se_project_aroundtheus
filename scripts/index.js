@@ -49,7 +49,7 @@ const addNewCardButton = document.querySelector(".profile__add-button");
 // Form data
 
 const nameInput = profileFormElement.querySelector(".modal__input_type_title");
-const jobInput = profileFormElement.querySelector(
+const descriptionInput = profileFormElement.querySelector(
   ".modal__input_type_description"
 );
 const cardTitleInput = addCardFormElement.querySelector(
@@ -75,7 +75,7 @@ function renderCard(cardData, wrapper) {
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileTitle.textContent = nameInput.value;
-  profileDescription.textContent = jobInput.value;
+  profileDescription.textContent = descriptionInput.value;
   closeModal(editProfileModal);
 }
 
@@ -117,7 +117,7 @@ addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
 profileEditButton.addEventListener("click", () => {
   nameInput.value = profileTitle.textContent;
-  jobInput.value = profileDescription.textContent;
+  descriptionInput.value = profileDescription.textContent;
   openModal(editProfileModal);
 });
 
