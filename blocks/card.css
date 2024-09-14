@@ -1,5 +1,6 @@
 .card {
   display: flex;
+  position: relative;
   flex-direction: column;
   list-style: none;
   border-radius: 10px;
@@ -7,22 +8,28 @@
   font-family: "Inter", Arial, sans-serif;
 }
 
+.card__image {
+  width: 282px;
+  height: 282px;
+  object-fit: cover;
+  z-index: 0;
+}
+
 .card__delete-button {
-  background: transparent url("../images/Trash__button.svg") right no-repeat;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  background: transparent url("../images/Trash__button.svg") no-repeat;
   width: 18px;
   height: 19.3px;
+  color: white;
   border: none;
+  z-index: 1;
 }
 
 .card__delete-button:hover {
   opacity: 0.5;
   cursor: pointer;
-}
-
-.card__image {
-  width: 282px;
-  height: 282px;
-  object-fit: cover;
 }
 
 .card__description {
