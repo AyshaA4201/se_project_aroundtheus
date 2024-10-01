@@ -56,7 +56,6 @@ const cardUrlInput = addCardFormElement.querySelector(
   ".modal__input_type_link"
 );
 
-// Image preview modal elements (Step 6)
 const previewImageModal = document.querySelector("#preview-image-modal");
 const previewImage = previewImageModal.querySelector(".modal__image");
 const imageCloseModalButton = previewImageModal.querySelector(".modal__close");
@@ -100,11 +99,11 @@ function getCardElement(data) {
     cardElement.remove();
   });
 
-  // Open the image preview modal when the card image is clicked (Step 6)
   cardImage.addEventListener("click", () => {
-    previewImage.src = data.link; // Set the image source
-    previewImage.alt = data.name; // Set the image alt text
-    openModal(previewImageModal); // Open the modal
+    previewImage.src = data.link;
+    previewImage.alt = data.name;
+    document.getElementById("image-caption").textContent = data.name;
+    openModal(previewImageModal);
   });
 
   likeButton.addEventListener("click", () => {
@@ -132,13 +131,11 @@ profileModalCloseButton.addEventListener("click", () =>
   closeModal(editProfileModal)
 );
 
-// add new card
 addNewCardButton.addEventListener("click", () => openModal(addCardModal));
 addCardModalCloseButton.addEventListener("click", () =>
   closeModal(addCardModal)
 );
 
-// Close the image modal when the close button is clicked (Step 6)
 imageCloseModalButton.addEventListener("click", () =>
   closeModal(previewImageModal)
 );

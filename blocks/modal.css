@@ -21,11 +21,11 @@
 
 .modal__container {
   position: relative;
-  width: 430px;
-  background-color: white;
+  width: auto;
+  background-color: transparent;
   margin: auto;
-  padding: 36px;
-  border-radius: 10px;
+  padding: 0;
+  border-radius: 0;
 }
 
 .modal__close {
@@ -119,4 +119,18 @@
   .modal__save {
     font-size: 14px;
   }
+}
+
+.modal__image {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  margin: auto;
+}
+
+.modal__caption {
+  text-align: left;
+  font-size: 18px;
+  color: white;
+  margin-top: 15px;
 }
