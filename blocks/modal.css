@@ -9,12 +9,13 @@
   padding: 0 19px;
   opacity: 0; /* Initially hidden */
   visibility: hidden; /* Ensure it's not interactive when hidden */
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: visibility 0s 0.3s, opacity 0.3s;
 }
 
 .modal_opened {
   opacity: 1;
   visibility: visible;
+  transition: visibility 0s 0.3s, opacity 0.3s;
 }
 
 .modal_closed {
@@ -32,13 +33,14 @@
 }
 
 .modal_opened .modal__container {
-  transform: translateY(0);
+  transform: translate(0, 100px);
   transition: transform 0.3s ease;
 }
 
 .modal__image-container {
   position: relative;
-  width: auto;
+  width: 75vw;
+  height: 75vh;
   background-color: transparent;
   margin: auto;
   padding: 0;
@@ -50,7 +52,7 @@
 }
 
 .modal_opened .modal__image-container {
-  transform: translateY(0);
+  transform: translate(0, 100px);
   transition: transform 0.3s ease;
 }
 
