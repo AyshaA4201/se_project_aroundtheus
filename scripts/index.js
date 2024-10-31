@@ -35,6 +35,7 @@ const editProfileModal = document.querySelector("#edit-modal");
 const addCardModal = document.querySelector("#card-add-modal");
 const profileFormElement = editProfileModal.querySelector(".modal__form");
 const addCardFormElement = addCardModal.querySelector(".modal__form");
+const imageCaption = document.getElementById("image-caption");
 
 // Buttons and other DOM nodes
 const profileEditButton = document.querySelector(".profile__edit-button");
@@ -86,6 +87,7 @@ function handleAddCardFormSubmit(evt) {
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardsWrap);
   closeModal(addCardModal);
+  addCardFormElement.reset();
 }
 
 function getCardElement(data) {
@@ -102,7 +104,7 @@ function getCardElement(data) {
   cardImage.addEventListener("click", () => {
     previewImage.src = data.link;
     previewImage.alt = data.name;
-    document.getElementById("image-caption").textContent = data.name;
+    imageCaption.textContent = data.name;
     openModal(previewImageModal);
   });
 
