@@ -20,8 +20,8 @@
   visibility: visible;
 }
 
-.modal_closed {
-}
+/* .modal_closed {
+} */
 
 .modal__container {
   max-width: 430px;
