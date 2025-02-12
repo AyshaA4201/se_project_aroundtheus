@@ -3,7 +3,7 @@
 
 function enableValidation(config) {
   const formEls = document.querySelectorAll("form");
-  console.log(formEls);
+  console.log(formEls.map);
 }
 
 const config = {
