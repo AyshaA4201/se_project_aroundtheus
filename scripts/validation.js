@@ -2,7 +2,7 @@
 // pass all the settings on call
 
 function enableValidation(config) {
-  const formEls = document.querySelectorAll("form");
+  const formEls = [...document.querySelectorAll("form")];
   console.log(formEls.map);
 }
 
