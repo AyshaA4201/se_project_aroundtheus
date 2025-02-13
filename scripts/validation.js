@@ -2,8 +2,12 @@
 // pass all the settings on call
 
 function enableValidation(config) {
-  const formEls = [...document.querySelectorAll("form")];
-  console.log(formEls.map);
+  const formEls = [...document.querySelectorAll(options.formSelector)];
+  formEls.forEach((formEl) => {
+    formEl.addEventListener("submit", (e) => {
+      e.preventDefault();
+    });
+  });
 }
 
 const config = {
