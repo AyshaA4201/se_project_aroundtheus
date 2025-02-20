@@ -2,7 +2,7 @@
 // pass all the settings on call
 
 function showInputError(formEl, inputEl, options) {
-  const errorMessageEl = document.querySelector;
+  const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
 }
 
 function checkInputValidity(formEl, inputEl, options) {
