@@ -16,6 +16,10 @@
   font-family: "Inter", Arial, sans-serif;
 }
 
+.modal__form {
+  position: relative;
+}
+
 .modal_opened {
   opacity: 1;
   visibility: visible;
