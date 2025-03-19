@@ -61,44 +61,6 @@ function enableValidation(options) {
   });
 }
 
-function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", handleEscKey);
-}
-
-function openModal(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener("keydown", handleEscKey);
-  const form = modal.querySelector(".modal__form");
-  if (form) {
-    const submitButton = form.querySelector(".modal__save");
-    const inputEls = [...form.querySelectorAll(".modal__input")];
-    form.reset();
-    toggleButtonState(inputEls, submitButton, config);
-  }
-}
-
-function handleOverlayClick(event) {
-  if (event.target.classList.contains("modal")) {
-    closeModal(event.target);
-  }
-}
-
-function handleEscKey(event) {
-  if (event.key === "Escape") {
-    const openModal = document.querySelector(".modal_opened");
-    if (openModal) {
-      closeModal(openModal);
-    }
-  }
-}
-
-document.querySelectorAll(".modal").forEach((modal) => {
-  modal.addEventListener("click", handleOverlayClick);
-});
-
-document.addEventListener("keydown", handleEscKey);
-
 const config = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
