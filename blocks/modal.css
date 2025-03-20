@@ -151,7 +151,7 @@
   opacity: 0.8;
 }
 
-.modal__button_disabled {
+.modal__save_disabled {
   background-color: white; /* Disabled button color */
   color: #000000;
   opacity: 0.2;
