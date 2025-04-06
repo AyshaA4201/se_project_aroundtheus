@@ -5,6 +5,11 @@
   right: 0;
   bottom: 0;
   z-index: 999;
+<<<<<<< Updated upstream
+=======
+  display: none;
+  /* display: flex; */
+>>>>>>> Stashed changes
   background-color: rgba(0, 0, 0, 0.5);
   padding: 0 19px;
   opacity: 0;
@@ -16,6 +21,7 @@
   font-family: "Inter", Arial, sans-serif;
 }
 
+<<<<<<< Updated upstream
 .modal__form {
   position: relative;
 }
@@ -23,6 +29,10 @@
 .modal_opened {
   opacity: 1;
   visibility: visible;
+=======
+.modal_opened {
+  display: flex;
+>>>>>>> Stashed changes
 }
 
 .modal__container {
