@@ -6,7 +6,7 @@ export default class Card {
   }
 
   _setEventListeners() {
-    this.cardElement
+    this._cardElement
       .querySelector(".card__like-button")
       .addEventListener("click", () => {
         this._handleLikeIcon();
