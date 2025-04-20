@@ -5,7 +5,22 @@ export default class Card {
     this._cardSelector = cardSelector;
   }
 
+  _getTemplate() {
+    const cardElement = document
+      .querySelector(this._cardSelector)
+      .content.querySelector(".card")
+      .cloneNode(true);
+
+    return cardElement;
+  }
+
   _setEventListeners() {
+    this._cardElement
+      .querySelector(".card__image")
+      .addEventListener("click", () => {
+        this._handlePreviewPicture();
+      });
+
     this._cardElement
       .querySelector(".card__like-button")
       .addEventListener("click", () => {
@@ -30,6 +45,13 @@ export default class Card {
       .classList.toggle("card__like-button_active");
   }
 
+  _handlePreviewPicture() {
+    previewImage.src = this._link;
+    previewImage.alt = this._name;
+    imageCaption.textContent = this._name;
+    openModal(previewImageModal);
+  }
+
   getView() {
     this._cardElement = document
       .querySelector(this._cardSelector)
@@ -37,5 +59,7 @@ export default class Card {
       .cloneNode(true);
     //get card view, set event listeners, and return the card element
     this._setEventListeners();
+
+    return this._cardElement;
   }
 }
