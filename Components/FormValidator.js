@@ -30,7 +30,7 @@ class FormValidator {
     }
   }
 
-  _toggleButtonState(inputEls, submitButton, inactiveButtonClass) {
+  _toggleButtonState() {
     let foundInvalid = inputEls.some((inputEl) => !inputEl.validity.valid);
     let allEmpty = inputEls.every((inputEl) => inputEl.value.trim() === "");
 
@@ -46,13 +46,13 @@ class FormValidator {
   _setEventListeners() {
     // const { this._inputSelector, this._submitButtonSelector } = options;
     const inputEls = [...this._form.querySelectorAll(this._inputSelector)];
-    const submitButton = this._form.querySelector(this._submitButtonSelector);
+    this._submitButton = this._form.querySelector(this._submitButtonSelector);
 
-    toggleButtonState(inputEls, submitButton, options);
+    this._toggleButtonState();
 
     inputEls.forEach((inputEl) => {
       inputEl.addEventListener("input", () => {
-        checkInputValidity(this._form, inputEl, options);
+        this._checkInputValidity(inputEl, options);
         toggleButtonState(inputEls, submitButton, options);
       });
     });
