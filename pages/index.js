@@ -81,13 +81,16 @@ const validationSettings = {
   errorClass: "modal__error_visible",
 };
 
-const editFormElement = addCardFormElement.querySelector(".modal__form");
-const addFormElement = addCardFormElement.querySelector(".modal__form");
+// const editFormElement = addCardFormElement.querySelector(".modal__form");
+// const addFormElement = addCardFormElement.querySelector(".modal__form");
 const editFormValidator = new FormValidator(
   validationSettings,
-  editFormElement
+  profileFormElement
 );
-const addFormValidator = new FormValidator(validationSettings, addFormElement);
+const addFormValidator = new FormValidator(
+  validationSettings,
+  addCardFormElement
+);
 
 function closeModal(modal) {
   modal.classList.remove("modal_open");
@@ -119,7 +122,8 @@ document.querySelectorAll(".modal").forEach((modal) => {
 });
 
 function renderCard(cardData, wrapper) {
-  const cardElement = new Card(cardData);
+  const card = new Card(cardData, "#card-template");
+  const cardElement = card.getView();
   wrapper.prepend(cardElement);
 }
 
