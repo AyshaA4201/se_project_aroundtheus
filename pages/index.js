@@ -92,6 +92,9 @@ const addFormValidator = new FormValidator(
   addCardFormElement
 );
 
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();
+
 function closeModal(modal) {
   modal.classList.remove("modal_open");
   document.removeEventListener("keydown", handleEscKey);

@@ -23,6 +23,7 @@ export default class Card {
       .addEventListener("click", () => {
         this._handleDeleteCard();
       });
+    console.log(this._handleDeleteCard);
   }
 
   _handleDeleteCard() {
@@ -31,9 +32,7 @@ export default class Card {
   }
 
   _handleLikeIcon() {
-    this._cardElement
-      .querySelector("card__like-button")
-      .classList.toggle("card__like-button_active");
+    this._likeButton.classList.toggle("card__like-button_active");
   }
 
   _handlePreviewPicture() {
@@ -49,6 +48,15 @@ export default class Card {
       .content.querySelector(".card")
       .cloneNode(true);
     //get card view, set event listeners, and return the card element
+    this._likeButton = this._cardElement.querySelector(".card__like-button");
+    this._deleteButton = this._cardElement.querySelector(
+      ".card__delete-button"
+    );
+    this._cardImage = this._cardElement.querySelector(".card__image");
+    this._cardTitle = this._cardElement.querySelector(".card__title");
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
+    this._cardTitle.textContent = this._name;
     this._setEventListeners();
 
     return this._cardElement;
