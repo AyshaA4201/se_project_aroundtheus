@@ -20,7 +20,7 @@
   position: relative;
 }
 
-.modal_open {
+.modal_opened {
   opacity: 1;
   visibility: visible;
 }
@@ -38,7 +38,7 @@
   box-sizing: border-box;
 }
 
-.modal_open .modal__container {
+.modal_opened .modal__container {
   transition: transform 0.3s ease;
 }
 
@@ -53,7 +53,7 @@
   border-radius: 0;
 }
 
-.modal_open .modal__image-container {
+.modal_opened .modal__image-container {
   transform: translate(0, 100px);
   transition: transform 0.3s ease;
 }

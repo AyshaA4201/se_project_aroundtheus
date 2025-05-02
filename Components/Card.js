@@ -23,7 +23,7 @@ export default class Card {
       .addEventListener("click", () => {
         this._handleDeleteCard();
       });
-    console.log(this._handleDeleteCard);
+    // console.log(this._handleDeleteCard);
   }
 
   _handleDeleteCard() {
@@ -36,10 +36,15 @@ export default class Card {
   }
 
   _handlePreviewPicture() {
-    previewImage.src = this._link;
-    previewImage.alt = this._name;
-    imageCaption.textContent = this._name;
-    openModal(previewImageModal);
+    this._previewImageModal = document.querySelector(".preview-image-modal");
+    this._previewImage = previewImageModal.querySelector(
+      ".preview-image-modal__image"
+    );
+    this._imageCaption = previewImageModal.querySelector(".image-caption");
+    this._previewImage.src = this._link;
+    this._previewImage.alt = this._name;
+    this._imageCaption.textContent = this._name;
+    openedModal(this._previewImageModal);
   }
 
   getView() {

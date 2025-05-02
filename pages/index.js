@@ -96,12 +96,12 @@ editFormValidator.enableValidation();
 addFormValidator.enableValidation();
 
 function closeModal(modal) {
-  modal.classList.remove("modal_open");
+  modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", handleEscKey);
 }
 
-function openModal(modal) {
-  modal.classList.add("modal_open");
+function openedModal(modal) {
+  modal.classList.add("modal_opened");
   document.addEventListener("keydown", handleEscKey);
 }
 
@@ -113,9 +113,9 @@ function handleOverlayClick(event) {
 
 function handleEscKey(event) {
   if (event.key === "Escape") {
-    const openModal = document.querySelector(".modal_open");
-    if (openModal) {
-      closeModal(openModal);
+    const openedModal = document.querySelector(".modal_opened");
+    if (openedModal) {
+      closeModal(openedModal);
     }
   }
 }
