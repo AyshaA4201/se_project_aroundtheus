@@ -36,14 +36,17 @@ export default class Card {
   }
 
   _handlePreviewPicture() {
-    this._previewImageModal = document.querySelector(".preview-image-modal");
-    this._previewImage = previewImageModal.querySelector(
-      ".preview-image-modal__image"
+    this._previewImageModal = document.querySelector("#preview-image-modal");
+    this._previewImage = this._previewImageModal.querySelector(
+      "#preview-image-modal__image"
     );
-    this._imageCaption = previewImageModal.querySelector(".image-caption");
+    this._imageCaption =
+      this._previewImageModal.querySelector("#image-caption");
     this._previewImage.src = this._link;
     this._previewImage.alt = this._name;
     this._imageCaption.textContent = this._name;
+
+    //this._openedModal = document.querySelector(".modal_opened");
     openedModal(this._previewImageModal);
   }
 
