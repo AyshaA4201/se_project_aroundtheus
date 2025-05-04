@@ -46,8 +46,12 @@ export default class Card {
     this._previewImage.alt = this._name;
     this._imageCaption.textContent = this._name;
 
-    //this._openedModal = document.querySelector(".modal_opened");
-    openedModal(this._previewImageModal);
+    //this._openModal = document.querySelector(".modal_open");
+    this._openModal(this._previewImageModal);
+    // _openModal(modal) {
+    //   modal.classList.add("modal_open");
+    //   document.addEventListener("keydown", handleEscKey);
+    // }
   }
 
   getView() {
