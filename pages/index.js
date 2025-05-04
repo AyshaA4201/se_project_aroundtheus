@@ -71,6 +71,7 @@ const cardUrlInput = addCardFormElement.querySelector(
 const previewImageModal = document.querySelector("#preview-image-modal");
 const previewImage = previewImageModal.querySelector(".modal__image");
 const imageCloseModalButton = previewImageModal.querySelector(".modal__close");
+const previewModalCaption = document.querySelector("#image-caption");
 
 const validationSettings = {
   formSelector: ".modal__form",
@@ -81,8 +82,6 @@ const validationSettings = {
   errorClass: "modal__error_visible",
 };
 
-// const editFormElement = addCardFormElement.querySelector(".modal__form");
-// const addFormElement = addCardFormElement.querySelector(".modal__form");
 const editFormValidator = new FormValidator(
   validationSettings,
   profileFormElement
@@ -125,7 +124,7 @@ document.querySelectorAll(".modal").forEach((modal) => {
 });
 
 function renderCard(cardData, wrapper) {
-  const card = new Card(cardData, "#card-template");
+  const card = new Card(cardData, "#card-template", handlePreviewModal);
   const cardElement = card.getView();
   wrapper.prepend(cardElement);
 }
@@ -146,34 +145,11 @@ function handleAddCardFormSubmit(evt) {
   addCardFormElement.reset();
 }
 
-// _getCardElement() {
-//   this._cardElement = cardTemplate.cloneNode(true);
-//   this._cardImage = cardElement.querySelector(".card__image");
-//   this._cardTitle = cardElement.querySelector(".card__title");
-//   this._likeButton = cardElement.querySelector(".card__like-button");
-//   this._deleteButton = cardElement.querySelector(".card__delete-button");
-
-//   deleteButton.addEventListener("click", () => {
-//     cardElement.remove();
-//   });
-
-//   cardImage.addEventListener("click", () => {
-//     previewImage.src = data.link;
-//     previewImage.alt = data.name;
-//     imageCaption.textContent = data.name;
-//     openModal(previewImageModal);
-//   });
-
-//   likeButton.addEventListener("click", () => {
-//     likeButton.classList.toggle("card__like-button_active");
-//   });
-
-//   cardImage.src = data.link;
-//   cardImage.alt = data.name;
-//   cardTitle.textContent = data.name;
-
-//   return cardElement;
-// }
+function handlePreviewModal(name, link) {
+  // const name = textContent.previewModalCaption;
+  // const link = previewImage.src;
+  openModal(previewImageModal);
+}
 
 // Form listeners
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);

@@ -9,7 +9,8 @@ export default class Card {
     this._cardElement
       .querySelector(".card__image")
       .addEventListener("click", () => {
-        this._handlePreviewPicture();
+        //this._handlePreviewPicture();
+        this._renderCard;
       });
 
     this._cardElement
@@ -35,24 +36,19 @@ export default class Card {
     this._likeButton.classList.toggle("card__like-button_active");
   }
 
-  _handlePreviewPicture() {
-    this._previewImageModal = document.querySelector("#preview-image-modal");
-    this._previewImage = this._previewImageModal.querySelector(
-      "#preview-image-modal__image"
-    );
-    this._imageCaption =
-      this._previewImageModal.querySelector("#image-caption");
-    this._previewImage.src = this._link;
-    this._previewImage.alt = this._name;
-    this._imageCaption.textContent = this._name;
+  // _handlePreviewPicture() {
+  //   this._previewImageModal = document.querySelector("#preview-image-modal");
+  //   this._previewImage = this._previewImageModal.querySelector(
+  //     "#preview-image-modal__image"
+  //   );
+  //   this._imageCaption =
+  //     this._previewImageModal.querySelector("#image-caption");
+  //   this._previewImage.src = this._link;
+  //   this._previewImage.alt = this._name;
+  //   this._imageCaption.textContent = this._name;
 
-    //this._openModal = document.querySelector(".modal_open");
-    this._openModal(this._previewImageModal);
-    // _openModal(modal) {
-    //   modal.classList.add("modal_open");
-    //   document.addEventListener("keydown", handleEscKey);
-    // }
-  }
+  //   this._openModal(this._previewImageModal);
+  // }
 
   getView() {
     this._cardElement = document
