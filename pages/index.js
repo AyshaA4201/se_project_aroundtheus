@@ -145,7 +145,8 @@ function handleAddCardFormSubmit(evt) {
   addCardFormElement.reset();
 }
 
-function handlePreviewModal(name, link) {
+function handlePreviewModal(link, name) {
+  console.log(name);
   previewImage.src = link;
   previewImage.alt = name;
   previewModalCaption.textContent = name;
