@@ -146,8 +146,9 @@ function handleAddCardFormSubmit(evt) {
 }
 
 function handlePreviewModal(name, link) {
-  // const name = textContent.previewModalCaption;
-  // const link = previewImage.src;
+  previewImage.src = link;
+  previewImage.alt = name;
+  previewModalCaption.textContent = name;
   openModal(previewImageModal);
 }
 
