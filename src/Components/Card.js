@@ -70,5 +70,3 @@ export default class Card {
     return this._cardElement;
   }
 }
-
-//check if it's working
