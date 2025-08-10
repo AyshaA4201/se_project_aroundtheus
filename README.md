@@ -64,6 +64,7 @@ Follow these steps to run the project locally on your machine (GitBash code is i
 1. Clone the repository
 
 _git clone https://github.com/AyshaA4201/se_project_aroundtheus.git_
+
 _cd se_project_aroundtheus_
 
 2. Install dependencies
