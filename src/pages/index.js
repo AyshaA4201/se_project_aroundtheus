@@ -22,7 +22,7 @@ const userInfo = new UserInfo({
 const imagePopup = new PopupWithImage(selectors.previewImagePopup);
 imagePopup.setEventListeners();
 
-// Handle card image click -> open preview popup
+// Card image click -> open preview popup
 function handleCardClick({ name, link }) {
   imagePopup.open({ name, link });
 }
@@ -33,7 +33,7 @@ const cardsSection = new Section(
     items: initialCards,
     renderer: (item) => {
       const card = new Card(item, "#card-template", (link, name) => {
-        // normalize to the object shape our imagePopup.open expects
+        // Normalize to object for image popup
         handleCardClick({ name, link });
       });
       const cardElement = card.getView();
@@ -66,50 +66,51 @@ addFormValidator.enableValidation();
 const editProfilePopup = new PopupWithForm(
   selectors.editProfilePopup,
   (formValues) => {
-    // formValues keys come from inputs `name` attributes
+    // Keys come from inputs' name attributes: "title" and "description"
     userInfo.setUserInfo({
       name: formValues.title,
       job: formValues.description,
     });
-    // PopupWithForm closes itself via .close() override after submit (in the class we call close() but not auto—if not, we can close here)
-    // If class doesn't auto-close, uncomment the next line:
-    // document.querySelector(selectors.editProfilePopup).classList.remove("modal_open");
+    // Close after successful submit
+    editProfilePopup.close();
+    // Optional: keep button state accurate (not strictly required for edit form)
+    editFormValidator.toggleButtonState();
   }
 );
 editProfilePopup.setEventListeners();
 
-// Open Edit Profile: prefill from UserInfo, then open
+// Open Edit Profile: prefill from UserInfo, reset validation, open
 document
   .querySelector(selectors.editProfileBtn)
   .addEventListener("click", () => {
     const { name, job } = userInfo.getUserInfo();
     document.querySelector(selectors.nameInput).value = name;
     document.querySelector(selectors.descInput).value = job;
-    editFormValidator.toggleButtonState &&
-      editFormValidator.toggleButtonState(); // if validator has it
+    editFormValidator.resetValidation(); // clears old errors & sets correct button state
     editProfilePopup.open();
   });
 
 // ----- Add Card PopupWithForm ----- //
 const addCardPopup = new PopupWithForm(selectors.addCardPopup, (formValues) => {
   const newItem = { name: formValues.title, link: formValues.link };
-  // Create a card and add to Section
+
+  // Create card and add to Section
   const card = new Card(newItem, "#card-template", (link, name) => {
     handleCardClick({ name, link });
   });
   const cardElement = card.getView();
   cardsSection.addItem(cardElement);
 
-  // Reset button state if validator needs it after submit
-  addFormValidator.resetValidation && addFormValidator.resetValidation();
+  // Close popup; form will reset in PopupWithForm.close()
+  addCardPopup.close();
+
+  // Start with disabled submit until user types again (meets checklist)
+  addFormValidator.disableSubmit();
 });
 addCardPopup.setEventListeners();
 
-// Open Add Card
+// Open Add Card: reset validation and open
 document.querySelector(selectors.addCardBtn).addEventListener("click", () => {
-  // Optional: reset validation state on open
-  addFormValidator.resetValidation && addFormValidator.resetValidation();
+  addFormValidator.resetValidation();
   addCardPopup.open();
 });
-
-initialCards.forEach((cardData) => renderCard(cardData, cardsWrap));
