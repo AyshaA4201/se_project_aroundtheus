@@ -10,7 +10,10 @@ export default class Card {
     this._cardElement
       .querySelector(".card__image")
       .addEventListener("click", () => {
+        // current signature:
         this._handlePreviewPicture(this._link, this._name);
+        //  object style version below, not sure which to use:
+        // this._handlePreviewPicture({ name: this._name, link: this._link });
       });
 
     this._cardElement
@@ -24,7 +27,6 @@ export default class Card {
       .addEventListener("click", () => {
         this._handleDeleteCard();
       });
-    // console.log(this._handleDeleteCard);
   }
 
   _handleDeleteCard() {
@@ -36,37 +38,24 @@ export default class Card {
     this._likeButton.classList.toggle("card__like-button_active");
   }
 
-  // _handlePreviewPicture() {
-  //   this._previewImageModal = document.querySelector("#preview-image-modal");
-  //   this._previewImage = this._previewImageModal.querySelector(
-  //     "#preview-image-modal__image"
-  //   );
-  //   this._imageCaption =
-  //     this._previewImageModal.querySelector("#image-caption");
-  //   this._previewImage.src = this._link;
-  //   this._previewImage.alt = this._name;
-  //   this._imageCaption.textContent = this._name;
-
-  //   this._openModal(this._previewImageModal);
-  // }
-
   getView() {
     this._cardElement = document
       .querySelector(this._cardSelector)
       .content.querySelector(".card")
       .cloneNode(true);
-    //get card view, set event listeners, and return the card element
+
     this._likeButton = this._cardElement.querySelector(".card__like-button");
     this._deleteButton = this._cardElement.querySelector(
       ".card__delete-button"
     );
     this._cardImage = this._cardElement.querySelector(".card__image");
     this._cardTitle = this._cardElement.querySelector(".card__title");
+
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;
     this._cardTitle.textContent = this._name;
-    this._setEventListeners();
 
+    this._setEventListeners();
     return this._cardElement;
   }
 }
