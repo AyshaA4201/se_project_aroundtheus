@@ -12,8 +12,6 @@ export default class Card {
       .addEventListener("click", () => {
         // current signature:
         this._handlePreviewPicture(this._link, this._name);
-        //  object style version below, not sure which to use:
-        // this._handlePreviewPicture({ name: this._name, link: this._link });
       });
 
     this._cardElement
