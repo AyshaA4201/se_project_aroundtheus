@@ -1,32 +1,33 @@
 export default class Popup {
-  constructor({ popupSelector }) {
-    this._popupElement = document.querySelector(popupSelector);
-    this._handleEscUp = this._handleEscUp.bind(this);
+  constructor(popupSelector) {
+    this._popup = document.querySelector(popupSelector);
+    this._handleEscClose = this._handleEscClose.bind(this);
   }
 
   open() {
-    this._popupElement.classList.add("modal_opened");
+    this._popup.classList.add("modal_open");
     document.addEventListener("keydown", this._handleEscClose);
   }
 
   close() {
-    this._popupElement.classList.remove("popup_is-opened");
-    document.removeEventListener("keyup", this._handleEscUp);
+    this._popup.classList.remove("modal_open");
+    document.removeEventListener("keydown", this._handleEscClose);
   }
 
-  _handleEscClose() {
-    if (event.key === "Escape") {
+  _handleEscClose(evt) {
+    if (evt.key === "Escape") {
       this.close();
     }
   }
 
   setEventListeners() {
-    this._popupElement.addEventListener("click", (event) => {
-      if (event.target === event.currentTarget) {
+    // Close by X button or by clicking on overlay
+    this._popup.addEventListener("mousedown", (evt) => {
+      const clickedOnOverlay = evt.target.classList.contains("modal");
+      const clickedOnClose = evt.target.classList.contains("modal__close");
+      if (clickedOnOverlay || clickedOnClose) {
         this.close();
       }
     });
-
-    this._closeButton.addEventListener("click", () => this.close());
   }
 }
