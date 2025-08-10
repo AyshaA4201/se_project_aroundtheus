@@ -9,12 +9,13 @@
 - Figma
 - Video
 - Technologies Used
+- Getting Started
 
 **Intro**
 
-This is a responsive, interactive web application where users can share photos from their travels around the U.S., view other users’ posts, and “like” them. It features a profile section (with editable name and description) and a grid of photo cards that can be added dynamically.
+This is a fun and interactive web app where you can share snapshots from your adventures around the U.S., check out other people’s posts, and even give them a “like.” You’ll have your own profile section (where you can update your name and description anytime) and a beautiful grid of photo cards that you can add to as you go.
 
-This project was originally built using HTML, CSS, JavaScript, Figma, and Git Bash, and later refactored to use object-oriented JavaScript, modular ES6 classes, and Webpack for bundling, CSS processing, and asset management.
+It started out as a simple project built with HTML, CSS, JavaScript, Figma, and Git Bash — but has since been leveled up! Now it’s powered by object-oriented JavaScript, organized into modular ES6 classes, and bundled with Webpack for smooth performance, responsive styling, and easy asset management.
 
 **Key Features**
 
@@ -55,3 +56,32 @@ This project was originally built using HTML, CSS, JavaScript, Figma, and Git Ba
     - CSSNano: CSS minification for optimized load times.
     - Git & GitHub: version control and hosting.
     - Figma: design reference and layout specifications.
+
+**Getting Started**
+
+Follow these steps to run the project locally on your machine (GitBash code is italicized):
+
+1. Clone the repository
+
+_git clone https://github.com/AyshaA4201/se_project_aroundtheus.git_
+_cd se_project_aroundtheus_
+
+2. Install dependencies
+   Make sure you have Node.js and npm installed. Then run:
+
+_npm install_
+
+3. Run the development server
+   This will start a local server with hot reloading:
+
+_npm run dev_
+
+4. Build for production
+   This will generate the dist folder with optimized files:
+
+_npm run build_
+
+5. Open the project
+
+- For development: the console will show a local URL (usually http://localhost:8080).
+- For production: open the dist/index.html file in your browser.
