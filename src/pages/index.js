@@ -11,6 +11,12 @@ import {
   selectors,
 } from "../utils/constants.js";
 import "./index.css";
+import headerLogo from "../images/vector__header.svg";
+import avatar from "../images/jacques-cousteau.jpg";
+
+// ----- Logo and Profile Image ----- //
+document.querySelector(".header__logo").src = headerLogo;
+document.querySelector(".profile__image").src = avatar;
 
 // ----- User Info ----- //
 const userInfo = new UserInfo({
