@@ -10,6 +10,7 @@ import {
   validationSettings,
   selectors,
 } from "../utils/constants.js";
+import "./index.css";
 
 // ----- User Info ----- //
 const userInfo = new UserInfo({
